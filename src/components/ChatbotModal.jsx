@@ -14,13 +14,13 @@ export default function ChatbotModal({ show, handleClose }) {
       ...allMessages,
       {
         role: 'user',
-        content: message,
+        content: message
       },
     ];
 
     const response = await fetch(API_URL, {
       method: 'POST',
-      header: {
+      headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
@@ -46,11 +46,11 @@ export default function ChatbotModal({ show, handleClose }) {
       </Modal.Header>
       <Modal.Body>
         <div>
-          {allMessages.map((msg, index) => {
+          {allMessages.map((msg, index) => (
             <p key={index}>
               <strong>{msg.role}:</strong> {msg.content}
-            </p>;
-          })}
+            </p>
+          ))}
         </div>
 
         <Form onSubmit={sendMessage}>
