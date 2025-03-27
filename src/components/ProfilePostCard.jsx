@@ -2,6 +2,7 @@ import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { useEffect, useState } from 'react';
 import { Button, Col, Image, Row } from 'react-bootstrap';
+import pic from "../assets/profile-picture.jpg";
 
 export default function ProfilePostCard({ content, postId }) {
   const [likes, setLikes] = useState([]);
@@ -11,8 +12,6 @@ export default function ProfilePostCard({ content, postId }) {
   const decode = jwtDecode(token);
   const userId = decode.id;
 
-  const pic =
-    'https://pbs.twimg.com/profile_images/1587405892437221376/h167J1b2_400x400.jpg';
   const BASE_URL =
     'https://c79e07e7-914f-4db7-8868-16cbd20a73e7-00-2gmzc1xbvcmkq.pike.replit.dev';
 

@@ -4,12 +4,12 @@ import { Button, Col, Image, Nav, Row, Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfilePostCard from './ProfilePostCard';
 import { fetchPostsByUser } from '../features/posts/postsSlice';
+import pic from "../assets/profile-picture.jpg";
 
 export default function ProfileMidBody() {
   const url =
     'https://pbs.twimg.com/profile_banners/83072625/1602845571/1500x500';
-  const pic =
-    'https://pbs.twimg.com/profile_images/1587405892437221376/h167J1b2_400x400.jpg';
+
 
   const dispatch = useDispatch();
   const posts = useSelector((store) => store.posts.posts);
@@ -32,7 +32,8 @@ export default function ProfileMidBody() {
         src={pic}
         roundedCircle
         style={{
-          width: 150,
+          width: 140,
+          height: 140,
           position: 'absolute',
           top: '140px',
           border: '4px solid #F8F9FA',
